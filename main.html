@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Grofers Checkout</title>
 </head>
-
 <body>
-    <!-- the entire body must be written by student -->
-    <table style="width: 100%">
-    <caption>
-      Monthly savings
-    </caption>
-    <tr>
-      <th>Item</th>
-      <th>Prices in Rs</th>
-    </tr>
-    <tr>
-      <td class="item">Tea</td>
-      <td class="price">50</td>
-    </tr>
-    <tr>
-      <td class="item">Coffee</td>
-      <td class="price">70</td>
-    </tr>
-    <tr>
-      <td class="item">Biscuits</td>
-      <td class="price">100</td>
-    </tr>
-    <tr>
-      <td class="item">Rice</td>
-      <td class="price">130</td>
-    </tr>
-    <tr>
-      <td class="item">Milk</td>
-      <td class="price">50</td>
-    </tr>
-  </table>
-    <script type="text/javascript" src="./script.js">
+
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+
+  <tr class="item">
+    <td>Apple</td>
+    <td class="prices">100</td>
+  </tr>
+
+  <tr class="item">
+    <td>Banana</td>
+    <td class="prices">50</td>
+  </tr>
+
+  <tr class="item">
+    <td>Milk</td>
+    <td class="prices">60</td>
+  </tr>
+
+</table>
+
+<script>
+  // Select all price elements
+  const prices = document.querySelectorAll(".prices");
+
+  let total = 0;
+
+  prices.forEach(price => {
+    total += Number(price.innerText);
+  });
+
+  // Create new row
+  const table = document.querySelector("table");
+  const totalRow = document.createElement("tr");
+  const totalCell = document.createElement("td");
+
+  totalCell.colSpan = 2;
+  totalCell.innerText = "Total Price: " + total;
+
+  totalRow.appendChild(totalCell);
+  table.appendChild(totalRow);
 </script>
 
 </body>
-
 </html>
